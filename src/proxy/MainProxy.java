@@ -3,10 +3,14 @@ package proxy;
 public class MainProxy {
 
     public static void main(String[] args) {
-        Door door = new Door();
-        Security security = new Security(door);
+        Database postgresDB = new Database("postgres");
+        Database mySQLdb = new Database("mysql");
 
-        security.open("1234");
-        security.open("123234");
+        DatabaseConnector localhostConnector = new DatabaseConnector("localhost", "5432");
+        DatabaseConnector remoteConnector = new DatabaseConnector("remotesite.com", "3306");
+
+        System.out.println(localhostConnector.connect(postgresDB));
+        System.out.println(localhostConnector.connect(mySQLdb));
+        System.out.println(remoteConnector.connect(postgresDB));
     }
 }
