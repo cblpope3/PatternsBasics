@@ -6,6 +6,7 @@ public class MainFactory {
         Coffee americano = CoffeeFactory.getCoffee("americano", 200, true);
         Coffee espresso = CoffeeFactory.getCoffee("espresso", 50, false);
 
+        System.out.println("\nFactory tests:");
         System.out.println("Factory Espresso Config::" + espresso);
         System.out.println("Factory Americano Config::" + americano);
 

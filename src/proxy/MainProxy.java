@@ -9,6 +9,7 @@ public class MainProxy {
         DatabaseConnector localhostConnector = new DatabaseConnector("localhost", "5432");
         DatabaseConnector remoteConnector = new DatabaseConnector("remotesite.com", "3306");
 
+        System.out.println("\nProxy tests:");
         System.out.println(localhostConnector.connect(postgresDB));
         System.out.println(localhostConnector.connect(mySQLdb));
         System.out.println(remoteConnector.connect(postgresDB));
