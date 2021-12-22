@@ -4,18 +4,15 @@ public class MainAdapter {
 
     public static void main(String[] args) {
 
-        Lion lionAsian = new AsianLion();
-        Lion lionAfrican = new AfricanLion();
+        USBStorage hdd = new USBHddStorage();
+        USBStorage flash = new USBFlashStorage();
 
-        Hunter hunter = new Hunter();
-        hunter.hunt(lionAsian);
-        hunter.hunt(lionAfrican);
+        Computer computer = new Computer();
+        computer.usbConnect(hdd);
+        computer.usbConnect(flash);
 
-        WildDog wildDog = new WildDog();
-        WildDogAdapter wildDogAdapter = new WildDogAdapter(wildDog);
-        hunter.hunt(wildDogAdapter);
-
-
-
+        MicroSDCard microSD = new MicroSDCard();
+        MicroSDAdapter microSDAdapter = new MicroSDAdapter(microSD);
+        computer.usbConnect(microSDAdapter);
     }
 }
